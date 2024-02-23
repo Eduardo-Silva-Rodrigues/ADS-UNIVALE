@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    background-color: #467cd4;
+}
+
+.formulario {
+    width: 300px;
+    height: 400px;
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50% -50%);
+    margin-top: 70px;
+    border-radius: 10px;
+}
+
+.titulo {
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 25%;
+}
+
+.nome {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    transform: translate(-50% -50%);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.telefone {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50% -50%);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.mensagem {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50% -50%);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+#submit {
+    margin: 60% 0% 0% 17%;
+}
+
+.link-home {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 91%;
+    left: 8%;
+    transform: translate(-50% -50%);
+}
