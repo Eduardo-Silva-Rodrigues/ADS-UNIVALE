@@ -1,4 +1,4 @@
-package Java_Poo.Henranca;
+package java_poo.heranca;
 
 public class Animal {
     private String nome;

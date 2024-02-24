@@ -1,3 +1,5 @@
+package Minha_Versao;
+
 public class User {
     public String nome;
     public String email;

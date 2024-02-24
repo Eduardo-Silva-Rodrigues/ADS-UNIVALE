@@ -1,3 +1,5 @@
+package Minha_Versao;
+
 public class Main {
     public static void main(String[] args) {
         Product produto1 = new Product("Tomate", 0.15, 0.2, 3.00);

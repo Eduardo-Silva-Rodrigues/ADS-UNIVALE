@@ -1,3 +1,5 @@
+package Minha_Versao;
+
 public class Carrinho {
     public Double precoBruto = 0.0;
     private Double taxa = 0.05;

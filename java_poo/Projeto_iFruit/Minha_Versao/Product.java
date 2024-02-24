@@ -1,3 +1,5 @@
+package Minha_Versao;
+
 public class Product {
     public String nome;
     public Double desconto;
