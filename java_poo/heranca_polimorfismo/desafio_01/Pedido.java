@@ -79,9 +79,9 @@ public class Pedido {
         System.out.println("_______________________________________");
         System.out.println("○ Lista de itens: ");
         
-        if (this.listaItens.length >= 1){
-            for (Produto produto : this.listaItens){
-            }
-        }
+        // if (this.listaItens.length >= 1){
+        //     for (Produto produto : this.listaItens){
+        //     }
+        // }
     }
 }
