@@ -69,7 +69,7 @@ public class Pedido {
 
         System.out.println("Valor total do pedido: "+ valorTotal);
     }
-
+    // Método para exibir informações do pedido:
     public void exibirInfoPedido(){
         System.out.println("○ Código do pedido: "+ this.codPedido);
         System.out.println("○ Data do pedido: "+ this.dataPedido);
@@ -79,9 +79,10 @@ public class Pedido {
         System.out.println("_______________________________________");
         System.out.println("○ Lista de itens: ");
         
-        // if (this.listaItens.length >= 1){
-        //     for (Produto produto : this.listaItens){
-        //     }
-        // }
+        if (this.listaItens.length >= 1){
+            for (Produto produto : this.listaItens){
+                System.out.println("Nome: "+ produto.getNome() +" | Preço: "+ produto.getPreco());
+            }
+        }
     }
 }

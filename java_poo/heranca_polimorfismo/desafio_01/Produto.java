@@ -4,11 +4,13 @@ public class Produto {
     private String nome;
     private Double preco;
     private Integer quantidade;
+    private Double peso;
 
-    public Produto(String nome, Double preco, Integer quantidade){
+    public Produto(String nome, Double preco, Integer quantidade, Double peso){
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
+        this.peso = peso;
     }
 
     public void setNome (String nome){
@@ -20,6 +22,9 @@ public class Produto {
     public void setQuantidade (Integer quantidade){
         this.quantidade = quantidade;
     }
+    public void setPeso(Double peso){
+        this.peso = peso;
+    }
 
     public String getNome(){
         return this.nome;
@@ -29,5 +34,8 @@ public class Produto {
     }
     public Integer getQuantidade(){
         return this.quantidade;
+    }
+    public Double getPeso(){
+        return this.peso;
     }
 }
