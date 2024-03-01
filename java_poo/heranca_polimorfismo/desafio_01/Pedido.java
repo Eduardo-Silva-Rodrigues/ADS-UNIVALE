@@ -1,25 +1,28 @@
 package java_poo.heranca_polimorfismo.desafio_01;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 public class Pedido {
     // Propriedades da classe:
-    private Integer codPedido;
-    private LocalDate dataPedido;
-    private String nomeCliente;
-    private String enderCliente;
-    public Produto[] listaItens;
-    private Double frete;
+    protected Integer codPedido;
+    protected LocalDate dataPedido;
+    protected String nomeCliente;
+    protected String enderCliente;
+    protected Produto[] listaItens;
+    protected Double frete;
     
     // Construtor:
     public Pedido(Integer codPedido, LocalDate dataPedido, String nomeCliente, String enderCliente, Produto[] listaItens, Double frete){
         this.codPedido = codPedido;
         this.dataPedido = dataPedido;
         this.nomeCliente = nomeCliente;
+        this.enderCliente = enderCliente;
         this.listaItens = listaItens;
         this.frete = frete;
     }
     
-    // Métodos de definição:
+    // Métodos setters and getters:
     public void setCodPedido(Integer codPedido){
         this.codPedido = codPedido;
     }
@@ -39,7 +42,6 @@ public class Pedido {
         this.frete = frete;
     }
     
-    // Métodos de coleta:
     public Integer getCodPedido(){
         return this.codPedido;
     }
@@ -76,17 +78,20 @@ public class Pedido {
     
     // Método para exibir informações do pedido:
     public void exibirInfoPedido(){
+        DecimalFormat df = new DecimalFormat("0.00");
+        df.setRoundingMode(RoundingMode.DOWN);
+        
         System.out.println("- Código do pedido: "+ this.codPedido);
         System.out.println("- Data do pedido: "+ this.dataPedido);
         System.out.println("- Nome do cliente: "+ this.nomeCliente);
         System.out.println("- Endereço do cliente: "+ this.enderCliente);
-        System.out.println("- Frete: "+ this.frete);
+        System.out.println("- Frete: "+ df.format(this.frete));
         System.out.println("_______________________________________");
         System.out.println("- Lista de itens: ");
-        
+
         if (this.listaItens.length >= 1){
             for (Produto produto : this.listaItens){
-                System.out.println("Nome: "+ produto.getNome() +" | Preço: "+ produto.getPreco());
+                System.out.println("Nome: "+ produto.getNome() +" | Preço: "+ df.format(produto.getPreco()) +" | Quantidade: "+ produto.getQuantidade());
             }
         }
     }
