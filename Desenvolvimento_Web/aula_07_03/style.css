@@ -1,0 +1,17 @@
+div {
+    height: 70px; /*Altura*/
+    width: 500px; /*Comprimento*/
+    background-color: green;
+    margin-top: 50px; /*Espaçamento externo superior*/
+    margin-left: 50px; /*Espaçamento externo esquerda*/
+    margin-bottom: 50px; /*Espaçamento externo inferior*/
+
+    margin: 20px 50px 75px 50px; /*Superior, direita, inferior, esquerda*/
+}
+
+/*Espaçamento interno*/
+
+div {
+    padding-top: 30px; /*Espaçamento interno superior*/
+    padding-left: 150px; /*Espaçamento interno esquerdo */
+}
