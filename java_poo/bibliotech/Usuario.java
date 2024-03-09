@@ -1,10 +1,14 @@
 package java_poo.bibliotech;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario {
     public String nome;
     public String telefone;
     public String email;
     public String endereco;
+    public List<Usuario> dadosUsuario = new ArrayList<Usuario>();
 
     Usuario(String nome, String telefone, String email, String endereco){
         this.nome = nome;
@@ -37,6 +41,5 @@ public class Usuario {
     }
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-    
+    } 
 }

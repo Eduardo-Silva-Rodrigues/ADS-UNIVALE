@@ -1,13 +1,20 @@
 package java_poo.bibliotech;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Biblioteca {
-    public String razaoSocial;
-    public String cnpj;
-    public String endereco;
-    public Livro[] acervo;
-    public Usuario[] listaUsuarios;
+    private String razaoSocial;
+    private String cnpj;
+    private String endereco;
+    private Map<String, List<Livro>> livros = new HashMap<String, List<Livro>>();
+    private Map<String, List<List<String>>> usuarios = new HashMap<String, List<List<String>>>();
+    private List<Livro> dadosLivro = new ArrayList<Livro>();
+    private List<String> dadosUsuario = new ArrayList<String>();
+    private List<List<String>> dados = new ArrayList<List<String>>();
 
     Biblioteca(String razaoSocial, String cnpj, String endereco){
         this.razaoSocial = razaoSocial;
@@ -24,9 +31,6 @@ public class Biblioteca {
     public String getEndereco() {
         return endereco;
     }
-    public Livro[] getLivros(){
-        return this.acervo;
-    }
 
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
@@ -37,9 +41,6 @@ public class Biblioteca {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public void setLivro(Livro[] livro){
-        this.acervo = livro;
-    } 
 
     public void interfaceBiblioteca(){
         Scanner scanner = new Scanner(System.in);
@@ -48,11 +49,11 @@ public class Biblioteca {
         while (opcao != 0){
             
             System.out.println("                     ");
-            System.out.println("INTERFACA BIBLIOTECH:");
+            System.out.println("INTERFACE BIBLIOTECH:");
             System.out.println("                     ");
             System.out.println("1 - Cadastrar usuário");
             System.out.println("2 - Cadastrar livro");
-            System.out.println("3 - Consultar usários cadastrados");
+            System.out.println("3 - Consultar usuários cadastrados");
             System.out.println("4 - Consultar acervo de livros");
             System.out.println("5 - Gerar relatórios de empréstimos");
             System.out.println("6 - Registrar empréstimo");
@@ -92,31 +93,42 @@ public class Biblioteca {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
-        String nome;
-        String telefone;
-        String email;
-        String endereco;
-
         System.out.println("                    ");
         System.out.println("CADASTRANDO USUÁRIO:");
         System.out.println("                    ");
+        
+        System.out.println("ID: ");
+        String id = scanner.next();
+        scanner.nextLine();
+        
         System.out.println("Nome completo: ");
-        nome = scanner.next();
+        String nome = scanner.next();
         scanner.nextLine();
+        
         System.out.println("Telefone: ");
-        telefone = scanner.next();
+        String telefone = scanner.next();
         scanner.nextLine();
+        
         System.out.println("Email: ");
-        email = scanner.next();
+        String email = scanner.next();
         scanner.nextLine();
+        
         System.out.println("Endereço: ");
-        endereco = scanner.next();
+        String endereco = scanner.next();
         scanner.nextLine();
 
-        // scanner.close();
+        Usuario usuario = new Usuario(id, nome, telefone, email, endereco);
+        
+        dadosUsuario.add(0, usuario.getId());
+        dadosUsuario.add(1, usuario.getNome());
+        dadosUsuario.add(2, usuario.getTelefone());
+        dadosUsuario.add(3, usuario.getEmail());
+        dadosUsuario.add(4, usuario.getEndereco());
 
-        @SuppressWarnings("unused")
-        Usuario usuario = new Usuario(nome, telefone, email, endereco);
+        dados.add(dadosUsuario);
+        usuarios.put(usuario.getId(), dados);
+
+        System.out.println(usuarios.get(usuario.getId()));
     }
 
     public void cadastrarLivro(){
