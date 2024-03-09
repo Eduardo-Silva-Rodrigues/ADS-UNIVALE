@@ -97,10 +97,6 @@ public class Biblioteca {
         System.out.println("CADASTRANDO USUÁRIO:");
         System.out.println("                    ");
         
-        System.out.println("ID: ");
-        String id = scanner.next();
-        scanner.nextLine();
-        
         System.out.println("Nome completo: ");
         String nome = scanner.next();
         scanner.nextLine();
@@ -117,18 +113,17 @@ public class Biblioteca {
         String endereco = scanner.next();
         scanner.nextLine();
 
-        Usuario usuario = new Usuario(id, nome, telefone, email, endereco);
+        Usuario usuario = new Usuario(nome, telefone, email, endereco);
         
-        dadosUsuario.add(0, usuario.getId());
-        dadosUsuario.add(1, usuario.getNome());
-        dadosUsuario.add(2, usuario.getTelefone());
-        dadosUsuario.add(3, usuario.getEmail());
-        dadosUsuario.add(4, usuario.getEndereco());
+        dadosUsuario.add(0, usuario.getNome());
+        dadosUsuario.add(1, usuario.getTelefone());
+        dadosUsuario.add(2, usuario.getEmail());
+        dadosUsuario.add(3, usuario.getEndereco());
 
         dados.add(dadosUsuario);
-        usuarios.put(usuario.getId(), dados);
+        usuarios.put(/*ID*/, dados);
 
-        System.out.println(usuarios.get(usuario.getId()));
+        System.out.println(usuarios.get(/*ID*/));
     }
 
     public void cadastrarLivro(){
