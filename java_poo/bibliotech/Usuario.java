@@ -4,19 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
+    public String ID;
     public String nome;
     public String telefone;
     public String email;
     public String endereco;
     public List<Usuario> dadosUsuario = new ArrayList<Usuario>();
 
-    Usuario(String nome, String telefone, String email, String endereco){
+    Usuario(String ID, String nome, String telefone, String email, String endereco){
+        this.ID = ID;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
     }
 
+    public String getID() {
+        return ID;
+    }
     public String getNome() {
         return nome;
     }
@@ -30,6 +35,9 @@ public class Usuario {
         return endereco;
     }
 
+    public void setID(String iD) {
+        ID = iD;
+    }
     public void setNome(String nome) {
         this.nome = nome;
     }

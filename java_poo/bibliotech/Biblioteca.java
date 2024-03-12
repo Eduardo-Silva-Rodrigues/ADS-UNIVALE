@@ -3,18 +3,15 @@ package java_poo.bibliotech;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
 
 public class Biblioteca {
     private String razaoSocial;
     private String cnpj;
     private String endereco;
-    private Map<String, List<Livro>> livros = new HashMap<String, List<Livro>>();
-    private Map<String, List<List<String>>> usuarios = new HashMap<String, List<List<String>>>();
-    private List<Livro> dadosLivro = new ArrayList<Livro>();
-    private List<String> dadosUsuario = new ArrayList<String>();
-    private List<List<String>> dados = new ArrayList<List<String>>();
+    private Map<String, ArrayList<String>> livros = new HashMap<String, ArrayList<String>>();
+    private Map<String, ArrayList<String>> usuarios = new HashMap<String, ArrayList<String>>();
+    // private ArrayList<ArrayList<String>> dados = new ArrayList<ArrayList<String>>();
 
     Biblioteca(String razaoSocial, String cnpj, String endereco){
         this.razaoSocial = razaoSocial;
@@ -66,9 +63,22 @@ public class Biblioteca {
         
             switch (opcao) {
                 case 1:
-                    cadastrarUsuario();
+                    ArrayList<String> listaUsuario = cadastrarUsuario();
+
+                    for (Map.Entry<String, ArrayList<String>> entry : usuarios.entrySet()) {
+                        System.out.println(entry.getKey() + ":" + entry.getValue());
+                        if (entry.getKey() == listaUsuario.get(0)){
+                            System.out.println("ID já cadastrado!");
+                            
+                        } else {
+                            usuarios.put(listaUsuario.get(0), listaUsuario);
+                        }
+                    }
+                    
                     break;
                 case 2:
+                    ArrayList<String> listaLivro = cadastrarLivro();
+                    livros.put(listaLivro.get(0), listaLivro);
                     break;
                 case 3:
                     break;
@@ -89,7 +99,7 @@ public class Biblioteca {
         }
     }
 
-    public void cadastrarUsuario(){
+    public ArrayList<String> cadastrarUsuario(){
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
@@ -97,6 +107,10 @@ public class Biblioteca {
         System.out.println("CADASTRANDO USUÁRIO:");
         System.out.println("                    ");
         
+        System.out.println("Novo ID: ");
+        String id = scanner.next();
+        scanner.nextLine();
+
         System.out.println("Nome completo: ");
         String nome = scanner.next();
         scanner.nextLine();
@@ -113,28 +127,61 @@ public class Biblioteca {
         String endereco = scanner.next();
         scanner.nextLine();
 
-        Usuario usuario = new Usuario(nome, telefone, email, endereco);
+        Usuario usuario = new Usuario(id, nome, telefone, email, endereco);
         
-        dadosUsuario.add(0, usuario.getNome());
-        dadosUsuario.add(1, usuario.getTelefone());
-        dadosUsuario.add(2, usuario.getEmail());
-        dadosUsuario.add(3, usuario.getEndereco());
+        ArrayList<String> dadosUsuario = new ArrayList<String>();
+        dadosUsuario.add(0, usuario.getID());
+        dadosUsuario.add(1, usuario.getNome());
+        dadosUsuario.add(2, usuario.getTelefone());
+        dadosUsuario.add(3, usuario.getEmail());
+        dadosUsuario.add(4, usuario.getEndereco());
 
-        dados.add(dadosUsuario);
-        usuarios.put(/*ID*/, dados);
-
-        System.out.println(usuarios.get(/*ID*/));
+        return dadosUsuario;
     }
 
-    public void cadastrarLivro(){
+    public ArrayList<String> cadastrarLivro(){
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Registrar ISBN: ");
-        Integer ISBN = scanner.nextInt();
-        // scanner.close();
 
-        System.out.println("ISBN: "+ ISBN);    
+        System.out.println("                    ");
+        System.out.println("CADASTRANDO LIVRO:");
+        System.out.println("                    ");
+        
+        System.out.println("ISBN: ");
+        String livroISBN = scanner.next();
+        scanner.nextLine();
+
+        System.out.println("Titulo: ");
+        String livroTitulo = scanner.next();
+        scanner.nextLine();
+        
+        System.out.println("Categoria: ");
+        String livroCategoria = scanner.next();
+        scanner.nextLine();
+        
+        System.out.println("Autor: ");
+        String livroAutor = scanner.next();
+        scanner.nextLine();
+        
+        System.out.println("Editora: ");
+        String livroEditora = scanner.next();
+        scanner.nextLine();
+
+        System.out.println("Ano de Publicação: ");
+        String livroAnoPublicacao = scanner.next();
+        scanner.nextLine();
+
+        Livro livro = new Livro(livroISBN, livroTitulo, livroCategoria, livroAutor, livroEditora, livroAnoPublicacao);
+        
+        ArrayList<String> dadosLivro = new ArrayList<String>();
+        dadosLivro.add(0, livro.getISBN());
+        dadosLivro.add(1, livro.getTitulo());
+        dadosLivro.add(2, livro.getCategoria());
+        dadosLivro.add(3, livro.getAutor());
+        dadosLivro.add(4, livro.getEditora());
+        dadosLivro.add(5, livro.getAnoPublicacao());
+
+        return dadosLivro;
     }
 }
     

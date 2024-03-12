@@ -1,14 +1,14 @@
 package java_poo.bibliotech;
 
 public class Livro {
-    public Integer ISBN;
+    public String ISBN;
     public String titulo;
     public String categoria;
     public String autor;
     public String editora;
-    public Integer anoPublicacao;
+    public String anoPublicacao;
 
-    Livro(Integer ISBN, String titulo, String categoria, String autor, String editora, Integer anoPublicacao){
+    Livro(String ISBN, String titulo, String categoria, String autor, String editora, String anoPublicacao){
         this.ISBN = ISBN;
         this.titulo = titulo;
         this.categoria = categoria;
@@ -17,7 +17,7 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public void setISBN(Integer ISBN){
+    public void setISBN(String ISBN){
         this.ISBN = ISBN;
     }
     public void setTitulo(String titulo){
@@ -32,11 +32,11 @@ public class Livro {
     public void setEditora(String editora){
         this.editora = editora;
     }
-    public void setAnoPublicacao(Integer anoPublicacao){
+    public void setAnoPublicacao(String anoPublicacao){
         this.anoPublicacao = anoPublicacao;
     }
     
-    public Integer getISBN(){
+    public String getISBN(){
         return this.ISBN;
     }
     public String getTitulo(){
@@ -51,7 +51,7 @@ public class Livro {
     public String getEditora(){
         return this.editora;
     }
-    public Integer getAnoPublicacao(){
+    public String getAnoPublicacao(){
         return this.anoPublicacao;
     }
 }
