@@ -39,6 +39,14 @@ public class Biblioteca {
         this.endereco = endereco;
     }
 
+    public void verificar(String id){
+        for (Map.Entry<String, ArrayList<String>> entry : usuarios.entrySet()) {
+            if (entry.getKey() == id){
+                System.out.println("ID já cadastrado!");
+            }
+        }
+    }
+
     public void interfaceBiblioteca(){
         Scanner scanner = new Scanner(System.in);
         Integer opcao = 8;
@@ -64,17 +72,24 @@ public class Biblioteca {
             switch (opcao) {
                 case 1:
                     ArrayList<String> listaUsuario = cadastrarUsuario();
+                    String idUser = listaUsuario.get(0);
+                    ArrayList<String> keys = new ArrayList<String>();
+                    if (usuarios.size() >= 0 && usuarios.size() <= 1){
+                        usuarios.put(listaUsuario.get(0), listaUsuario);
+                    }
+                    if (usuarios.size() > 1){
+                        for (String key : usuarios.keySet()){
+                            keys.add(key);
+                        }
 
-                    for (Map.Entry<String, ArrayList<String>> entry : usuarios.entrySet()) {
-                        System.out.println(entry.getKey() + ":" + entry.getValue());
-                        if (entry.getKey() == listaUsuario.get(0)){
-                            System.out.println("ID já cadastrado!");
-                            
-                        } else {
-                            usuarios.put(listaUsuario.get(0), listaUsuario);
+                        for (Integer i = 1; (keys.size() - 1) > i; i++){
+                            if (idUser == keys.get(i)){
+                                System.out.println("ID já cadastrado!");
+                            } else {
+                                usuarios.put(listaUsuario.get(0), listaUsuario);
+                             }
                         }
                     }
-                    
                     break;
                 case 2:
                     ArrayList<String> listaLivro = cadastrarLivro();
