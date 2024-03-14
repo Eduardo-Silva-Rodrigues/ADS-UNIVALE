@@ -1,15 +1,12 @@
 package java_poo.bibliotech;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Usuario {
-    public String ID;
-    public String nome;
-    public String telefone;
-    public String email;
-    public String endereco;
-    public List<Usuario> dadosUsuario = new ArrayList<Usuario>();
+    private String ID;
+    private String nome;
+    private String telefone;
+    private String email;
+    private String endereco;
+    // private List<Usuario> dadosUsuario = new ArrayList<Usuario>();
 
     Usuario(String ID, String nome, String telefone, String email, String endereco){
         this.ID = ID;
