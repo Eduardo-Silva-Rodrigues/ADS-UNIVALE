@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Biblioteca {
     private String razaoSocial;
@@ -11,7 +12,8 @@ public class Biblioteca {
     private String endereco;
     private Map<String, ArrayList<String>> livros = new HashMap<String, ArrayList<String>>();
     private Map<String, ArrayList<String>> usuarios = new HashMap<String, ArrayList<String>>();
-    // private ArrayList<ArrayList<String>> dados = new ArrayList<ArrayList<String>>();
+    private Map<String, String> emprestimos = new HashMap<String, String>();
+    private ArrayList<String> relatorio = new ArrayList<String>();
 
     Biblioteca(String razaoSocial, String cnpj, String endereco){
         this.razaoSocial = razaoSocial;
@@ -39,17 +41,9 @@ public class Biblioteca {
         this.endereco = endereco;
     }
 
-    public void verificar(String id){
-        for (Map.Entry<String, ArrayList<String>> entry : usuarios.entrySet()) {
-            if (entry.getKey() == id){
-                System.out.println("ID já cadastrado!");
-            }
-        }
-    }
-
     public void interfaceBiblioteca(){
         Scanner scanner = new Scanner(System.in);
-        Integer opcao = 8;
+        Integer opcao = 9;
         
         while (opcao != 0){
             
@@ -81,22 +75,54 @@ public class Biblioteca {
                     continuar();
                     break;
                 case 3:
-                    consultarUsuarios();
+                    if (usuarios.isEmpty()){
+                        System.out.println("                      ");
+                        System.out.println("== Nenhum usuário cadastrado... ==");
+                        continuar();
+                    } else {
+                        consultarUsuarios();
+                    }
                     break;
                 case 4:
-                consultarLivros();
+                    if (livros.isEmpty()){
+                        System.out.println("                      ");
+                        System.out.println("== Nenhum livro no acervo... ==");
+                        continuar();
+                    } else {
+                        consultarLivros();
+                    }
                     break;
                 case 5:
+                System.out.println("           ");
+                System.out.println("RELATÓRIO:");
+                    for (int i = 0; i < relatorio.size(); i++)
+                        System.out.println(relatorio.get(i));
+                        continuar();
                     break;
                 case 6:
+                    ArrayList<String> emprestimo = emprestarLivro();
+                    emprestimos.put(emprestimo.get(0), emprestimo.get(1));
+                    Date dataEmprestimo = new Date();
+                    if (relatorio.size() >= 0){
+                        relatorio.add(relatorio.size(), ("\nEmprestimo:\nUsuário: " + usuarios.get(emprestimo.get(0)).get(1) + "\nLivro: " + livros.get(emprestimo.get(1)).get(1) + "\n Data: " + dataEmprestimo));
+                    }
+                    continuar();
                     break;
                 case 7:
+                    ArrayList<String> devolucao = devolverLivro();
+                    emprestimos.remove(devolucao.get(0), devolucao.get(1));
+                    Date dataDevolucao = new Date();
+                    if (relatorio.size() >= 0){
+                        relatorio.add(relatorio.size(), ("\nDevolução:\nUsuário: " + usuarios.get(devolucao.get(0)).get(1) + "\nLivro: " + livros.get(devolucao.get(1)).get(1) + "\nData: " + dataDevolucao));
+                    }
                     break;
                 case 0:
                     scanner.close();
                     break;
                 default:
-                    System.out.println("Esta opção não é válida");
+                    System.out.println("                       ");
+                    System.out.println("== Esta opção não é válida ==");
+                    continuar();
             }
         }
     }
@@ -181,7 +207,7 @@ public class Biblioteca {
         String livroAnoPublicacao = scanner.next();
         scanner.nextLine();
 
-        Livro livro = new Livro(livroISBN, livroTitulo, livroCategoria, livroAutor, livroEditora, livroAnoPublicacao, "FUNDAÇÃO BIBLIOTECA NACIONAL", "40.176.679/0001-99", "R. Debret, 23 - Centro, Rio de Janeiro");
+        Livro livro = new Livro(livroISBN, livroTitulo, livroCategoria, livroAutor, livroEditora, livroAnoPublicacao);
         
         ArrayList<String> dadosLivro = new ArrayList<String>();
         dadosLivro.add(0, livro.getISBN());
@@ -239,6 +265,50 @@ public class Biblioteca {
         System.out.println("ANO DE PUBLICAÇÃO: " + livros.get(isbnLivro).get(5));
 
         continuar();
+    }
+
+    public ArrayList<String> emprestarLivro(){
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("                    ");
+        System.out.println("EMPRESTAR LIVRO:");
+        System.out.println("                    ");
+        System.out.println("(Apenas 1 livro por pessoa)");
+        System.out.println("                    ");
+        System.out.println("Informe o ID do usuário:");
+        String idUser = scanner.next();
+        scanner.hasNextLine();
+        System.out.println("Informe o ISBN do livro:");
+        String isbnLivro = scanner.next();
+        scanner.hasNextLine();
+
+        ArrayList<String> dadosEmprestimo = new ArrayList<String>();
+        dadosEmprestimo.add(0, idUser);
+        dadosEmprestimo.add(1, isbnLivro);
+
+        return dadosEmprestimo;
+    }
+
+    public ArrayList<String> devolverLivro(){
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("                    ");
+        System.out.println("DEVOLVER LIVRO:");
+        System.out.println("                    ");
+        System.out.println("Informe o ID do usuário:");
+        String idUser = scanner.next();
+        scanner.hasNextLine();
+        System.out.println("Informe o ISBN do livro:");
+        String isbnLivro = scanner.next();
+        scanner.hasNextLine();
+
+        ArrayList<String> dadosDevolucao = new ArrayList<String>();
+        dadosDevolucao.add(0, idUser);
+        dadosDevolucao.add(1, isbnLivro);
+
+        return dadosDevolucao;
     }
 }
     

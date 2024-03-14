@@ -1,6 +1,6 @@
 package java_poo.bibliotech;
 
-public class Livro extends Biblioteca {
+public class Livro {
     private String ISBN;
     private String titulo;
     private String categoria;
@@ -8,8 +8,7 @@ public class Livro extends Biblioteca {
     private String editora;
     private String anoPublicacao;
 
-    Livro(String ISBN, String titulo, String categoria, String autor, String editora, String anoPublicacao, String razaoSocial, String cnpj, String endereco){
-        super(razaoSocial, cnpj, endereco);
+    Livro(String ISBN, String titulo, String categoria, String autor, String editora, String anoPublicacao){
         this.ISBN = ISBN;
         this.titulo = titulo;
         this.categoria = categoria;
