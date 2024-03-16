@@ -1,5 +1,7 @@
 package java_poo.projetos.universidade;
 
+import java.util.ArrayList;
+
 public class Pessoa {
     private String nome;
     private String email;
@@ -46,4 +48,8 @@ public class Pessoa {
         this.endereco = endereco;
     }
     
+    public void listarPessoas(){
+        
+    }
+
 }

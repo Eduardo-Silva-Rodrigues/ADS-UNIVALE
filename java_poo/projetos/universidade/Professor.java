@@ -1,14 +1,12 @@
 package java_poo.projetos.universidade;
 
-import java.util.ArrayList;
-
 public class Professor extends Pessoa {
     private Curso curso;
-    private ArrayList<Disciplina> disciplinas;
+    private Disciplina disciplinas;
     private String salario;
     
     public Professor(String nome, String email, String telefone, String cpf, String endereco, Curso curso,
-            ArrayList<Disciplina> disciplinas, String salario) {
+            Disciplina disciplinas, String salario) {
         super(nome, email, telefone, cpf, endereco);
         this.curso = curso;
         this.disciplinas = disciplinas;
@@ -21,10 +19,10 @@ public class Professor extends Pessoa {
     public void setCurso(Curso curso) {
         this.curso = curso;
     }
-    public ArrayList<Disciplina> getDisciplinas() {
+    public Disciplina getDisciplinas() {
         return disciplinas;
     }
-    public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
+    public void setDisciplinas(Disciplina disciplinas) {
         this.disciplinas = disciplinas;
     }
     public String getSalario() {
@@ -33,6 +31,6 @@ public class Professor extends Pessoa {
     public void setSalario(String salario) {
         this.salario = salario;
     }
- 
+
     
 }

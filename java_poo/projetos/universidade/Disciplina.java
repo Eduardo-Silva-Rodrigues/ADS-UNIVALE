@@ -9,11 +9,8 @@ public class Disciplina {
     private Curso curso;
     private Integer horas;
 
-    public Disciplina(String nome, Professor professor, ArrayList<Aluno> alunos, Curso curso, Integer horas) {
+    public Disciplina(String nome, Integer horas) {
         this.nome = nome;
-        this.professor = professor;
-        this.alunos = alunos;
-        this.curso = curso;
         this.horas = horas;
     }
 

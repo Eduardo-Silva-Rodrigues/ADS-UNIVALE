@@ -1,4 +1,4 @@
-package java_poo.projetos.projeto_ifruit.minha_versaoit.minha_versaoit.minha_versao;
+package java_poo.projetos.projeto_ifruit.minha_versao;
 
 public class Product {
     public String nome;

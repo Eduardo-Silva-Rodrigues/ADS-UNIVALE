@@ -10,13 +10,8 @@ public class Curso {
     private ArrayList<String> turmas;
     private String mensalidade;
     
-    public Curso(String nome, ArrayList<Disciplina> disciplinas, ArrayList<Professor> professores,
-            ArrayList<Aluno> alunos, ArrayList<String> turmas, String mensalidade) {
+    public Curso(String nome, String mensalidade) {
         this.nome = nome;
-        this.disciplinas = disciplinas;
-        this.professores = professores;
-        this.alunos = alunos;
-        this.turmas = turmas;
         this.mensalidade = mensalidade;
     }
 

@@ -9,13 +9,12 @@ public class Aluno extends Pessoa {
     private int semestre;
     private ArrayList<Double> notas;
     
-    public Aluno(String nome, String email, String telefone, String cpf, String endereco, Curso curso, ArrayList<Disciplina> disciplinas, String turma, int semestre, ArrayList<Double> notas) {
+    public Aluno(String nome, String email, String telefone, String cpf, String endereco, Curso curso, ArrayList<Disciplina> disciplinas, String turma, int semestre) {
         super(nome, email, telefone, cpf, endereco);
         this.curso = curso;
         this.disciplinas = disciplinas;
         this.turma = turma;
         this.semestre = semestre;
-        this.notas = notas;
     }
 
     public Curso getCurso() {

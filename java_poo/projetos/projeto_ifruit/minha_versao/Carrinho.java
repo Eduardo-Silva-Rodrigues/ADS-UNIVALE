@@ -1,4 +1,4 @@
-package java_poo.projetos.projeto_ifruit.minha_versaojetos.projeto_ifruit.minha_versaojetos.Projeto_iFruit.minha_versao;
+package java_poo.projetos.projeto_ifruit.minha_versao;
 
 public class Carrinho {
     public Double precoBruto = 0.0;
