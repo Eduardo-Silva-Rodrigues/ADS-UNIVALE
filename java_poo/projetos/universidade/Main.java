@@ -17,6 +17,12 @@ public class Main {
         "444.444.444-44", "Rua Frederico Moura, 444 - Franca, SP, Cidade Nova");
         Pessoa pessoa6 = new Pessoa("Lucas", "lucas1@gmail.com", "(43) 9 555-555",
         "555.555.555-55", "Rua Maria Luísa do Val Penteado, 555 - São Paulo, SP, Cidade São Mateus");
+        Pessoa pessoa7 = new Pessoa("Carlos", "carlos1@gmail.com", "(43) 9 666-666",
+        "666.666.666-66", "Avenida Afonso Pena, 666 - Boa Viagem, MG, Boa Viagem");
+
+        // Criando lista de pessoas
+        ArrayList<Pessoa> listaPessoasUniversidade = new ArrayList<Pessoa>();
+        listaPessoasUniversidade.add(0, pessoa7);
 
         // Criando objeto Universidade
         Universidade universidade = new Universidade("UNIVALE",
@@ -108,7 +114,9 @@ public class Main {
         universidade.setProfessores(listaProfessoresAds);
         universidade.setAlunos(listaAlunosAds);
         universidade.setCursos(listaCursos);
+        universidade.setPessoas(listaPessoasUniversidade);
 
+        universidade.interfaceUniversidade();
     }
 }
 

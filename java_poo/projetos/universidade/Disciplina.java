@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Disciplina {
     private String nome;
-    private Professor professor;
     private ArrayList<Aluno> alunos;
     private Curso curso;
     private Integer horas;
@@ -19,12 +18,6 @@ public class Disciplina {
     }
     public void setNome(String nome) {
         this.nome = nome;
-    }
-    public Professor getProfessor() {
-        return professor;
-    }
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
     }
     public ArrayList<Aluno> getAlunos() {
         return alunos;
