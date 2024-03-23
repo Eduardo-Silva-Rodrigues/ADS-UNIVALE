@@ -103,6 +103,30 @@ public class Main {
 
         ads.setTurmas(listaTurmasAds);
 
+        Nota notaPooAluno1 = new Nota(aluno1, adsPoo, 0.0, 0.0, 0.0);
+        Nota notaBancoAluno1 = new Nota(aluno1, adsBanco, 0.0, 0.0, 0.0);
+        Nota notaAnaliseAluno1 = new Nota(aluno1, adsAnalise, 0.0, 0.0, 0.0);
+
+        Nota notaPooAluno2 = new Nota(aluno2, adsPoo, 0.0, 0.0, 0.0);
+        Nota notaBancoAluno2 = new Nota(aluno2, adsBanco, 0.0, 0.0, 0.0);
+        Nota notaAnaliseAluno2 = new Nota(aluno2, adsAnalise, 0.0, 0.0, 0.0);
+
+        Nota notaPooAluno3 = new Nota(aluno3, adsPoo, 0.0, 0.0, 0.0);
+        Nota notaBancoAluno3 = new Nota(aluno3, adsBanco, 0.0, 0.0, 0.0);
+        Nota notaAnaliseAluno3 = new Nota(aluno3, adsAnalise, 0.0, 0.0, 0.0);
+
+        aluno1.setNotas(0, notaPooAluno1);
+        aluno1.setNotas(1, notaBancoAluno1);
+        aluno1.setNotas(2, notaAnaliseAluno1);
+
+        aluno2.setNotas(0, notaPooAluno2);
+        aluno2.setNotas(1, notaBancoAluno2);
+        aluno2.setNotas(2, notaAnaliseAluno2);
+
+        aluno3.setNotas(0, notaPooAluno3);
+        aluno3.setNotas(1, notaBancoAluno3);
+        aluno3.setNotas(2, notaAnaliseAluno3);
+
         ArrayList<Aluno> listaAlunosAds = new ArrayList<Aluno>(); // Lista de alunos do objeto "ads"
         listaAlunosAds.add(0, aluno1);
         listaAlunosAds.add(1, aluno2);

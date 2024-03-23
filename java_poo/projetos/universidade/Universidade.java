@@ -119,19 +119,23 @@ public class Universidade {
                 continuar();
                 break;
             case 4:
-                atribuirNotas();
+                atribuirNota();
+
                 continuar();
                 break;
             case 5:
-                
+                listarPessoasCad();
+            
                 continuar();
                 break;
             case 6:
-            
+                listarAlunos(); 
+
                 continuar();
                 break;
             case 7:
-            
+                listarProfessores();    
+
                 continuar();
                 break;
             case 0:
@@ -423,36 +427,77 @@ public class Universidade {
         return professor;
     }
 
-    public void atribuirNotas(){
+    public void atribuirNota(){
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
+        Aluno[] container = new Aluno[1];
+        Disciplina[] containerD = new Disciplina[1];
 
-        System.out.println("               ");
-        System.out.println("ATRIBUIR NOTAS:");
-        System.out.println("               ");
+        System.out.println("             ");
+        System.out.println("OUTROS DADOS:");
+        System.out.println("             ");
         System.out.println("CPF do aluno:");
         String cpfAluno = sc.next();
         sc.nextLine();
-        System.out.println("Nome da disciplina:");
-        String nomeDisciplina = sc.next();
+        System.out.println("Disciplina:");
+        String disciplina = sc.next();
         sc.nextLine();
         System.out.println("Nota de atividades:");
-        Double notaAtividade = sc.nextDouble();
+        Double atividades = sc.nextDouble();
         sc.nextLine();
         System.out.println("Nota de trabalho:");
-        Double notaTrabalho = sc.nextDouble();
+        Double trabalho = sc.nextDouble();
         sc.nextLine();
-        System.out.println("Nota da prova:");
-        Double notaProva = sc.nextDouble();
+        System.out.println("Nota de prova:");
+        Double prova = sc.nextDouble();
         sc.nextLine();
 
-        for (int i = 0; i < alunos.size(); i++){
-            if (alunos.get(i).getCpf() == cpfAluno){
-                System.out.println(alunos.get(i).getCpf());
-            } else {
-                System.out.println("Nada");
+        for (Aluno aluno : alunos){
+            if (aluno.getCpf() == cpfAluno){
+                container[0] = aluno;
             }
         }
 
+        for (int i = 0; i < cursos.size(); i++){
+            for (int j = 0; j < cursos.get(i).getDisciplinas().size(); j++){
+                if (cursos.get(i).getDisciplinas().get(j).getNome() == disciplina){
+                    containerD[0] = cursos.get(i).getDisciplinas().get(j);
+                }
+            }
+        }
+        
+        Nota notaAluno = new Nota(container[0], containerD[0], atividades, trabalho, prova);
+
+        for (Aluno aluno : alunos){
+            if (aluno.getCpf() == cpfAluno){
+                for (int i = 0; i < 3; i++){
+                    for (int j = 0; j < 4; j++){
+                        if (containerD[0].getNome() == cursos.get(i).getDisciplinas().get(j).getNome()){
+                            aluno.setNotas(j, notaAluno);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    public void listarPessoasCad(){
+        for (Pessoa pessoa : pessoas){
+            pessoa.listarPessoas();
+        }
+    }
+
+    public void listarProfessores(){
+        for (Professor professor : professores){
+            professor.listarPessoas();
+        }
+    }
+
+    public void listarAlunos(){
+        for (Aluno aluno : alunos){
+            aluno.listarPessoas();
+        }
     }
 }
 

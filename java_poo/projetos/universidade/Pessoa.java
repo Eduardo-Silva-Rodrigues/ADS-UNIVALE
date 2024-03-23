@@ -47,7 +47,13 @@ public class Pessoa {
     }
     
     public void listarPessoas(){
-        
+        System.out.println("                        ");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Email: " + this.email);
+        System.out.println("Telefone: " + this.telefone);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("Endereço: " + this.endereco);
+        System.out.println("                        ");
     }
 
 }

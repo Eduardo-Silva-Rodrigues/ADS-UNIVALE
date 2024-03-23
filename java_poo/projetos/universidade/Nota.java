@@ -7,10 +7,10 @@ public class Nota {
     private Double notaTrabalho;
     private Double notaAtividade;
 
-    public Nota(Aluno aluno, Disciplina disciplina, Double notaProva, Double notaTrabalho, Double notaAtividade){
-        this.notaProva = notaProva;
-        this.notaTrabalho = notaTrabalho;
+    public Nota(Aluno aluno, Disciplina disciplina, Double notaAtividade, Double notaTrabalho, Double notaProva){
         this.notaAtividade = notaAtividade;
+        this.notaTrabalho = notaTrabalho;
+        this.notaProva = notaProva;
     }
 
     public Aluno getAluno() {
