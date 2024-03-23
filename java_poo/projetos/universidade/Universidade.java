@@ -119,11 +119,11 @@ public class Universidade {
                 continuar();
                 break;
             case 4:
-        
+                atribuirNotas();
                 continuar();
                 break;
             case 5:
-            
+                
                 continuar();
                 break;
             case 6:
@@ -421,6 +421,38 @@ public class Universidade {
                 break; 
             }
         return professor;
+    }
+
+    public void atribuirNotas(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("               ");
+        System.out.println("ATRIBUIR NOTAS:");
+        System.out.println("               ");
+        System.out.println("CPF do aluno:");
+        String cpfAluno = sc.next();
+        sc.nextLine();
+        System.out.println("Nome da disciplina:");
+        String nomeDisciplina = sc.next();
+        sc.nextLine();
+        System.out.println("Nota de atividades:");
+        Double notaAtividade = sc.nextDouble();
+        sc.nextLine();
+        System.out.println("Nota de trabalho:");
+        Double notaTrabalho = sc.nextDouble();
+        sc.nextLine();
+        System.out.println("Nota da prova:");
+        Double notaProva = sc.nextDouble();
+        sc.nextLine();
+
+        for (int i = 0; i < alunos.size(); i++){
+            if (alunos.get(i).getCpf() == cpfAluno){
+                System.out.println(alunos.get(i).getCpf());
+            } else {
+                System.out.println("Nada");
+            }
+        }
+
     }
 }
 
