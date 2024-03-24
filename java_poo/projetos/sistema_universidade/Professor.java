@@ -11,6 +11,7 @@ public class Professor extends Pessoa {
         super(nome, idade, cpf, email, telefone, endereco, universidade);
         this.curso = curso;
         this.salario = salario;
+
     }
 
     public void vincularCurso(Curso curso){

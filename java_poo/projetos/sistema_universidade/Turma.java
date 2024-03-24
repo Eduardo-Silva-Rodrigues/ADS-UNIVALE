@@ -6,6 +6,7 @@ public class Turma {
     private String nome;
     private int semestre;
     private String periodo;
+    private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
 
     public Turma(String nome, int semestre, String periodo){
@@ -36,6 +37,28 @@ public class Turma {
 
     public String exibirPeriodo(){
         return this.periodo;
+    }
+
+    public void adicionarDisciplina(Disciplina disciplina){
+        if (this.disciplinas.isEmpty()){
+            this.disciplinas.add(0, disciplina);
+        } else if (!this.disciplinas.isEmpty()){
+            this.disciplinas.add(this.disciplinas.size(), disciplina);
+        }
+    }
+
+    public ArrayList<Disciplina> exibirDisciplinas(){
+        return this.disciplinas;
+    }
+
+    public void listarDisciplinas(){
+        if (this.disciplinas.isEmpty()){
+            System.out.println("Nenhuma disciplina encontrada!");
+        } else {
+            for (int i = 0; i < this.disciplinas.size(); i++){
+                System.out.println(this.disciplinas.get(i).exibirNome());
+            }
+        }
     }
 
     public void adicionarAluno(Aluno aluno){

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Curso {
     private String nome;
-    private ArrayList<Turma> turmas;
+    private ArrayList<Turma> turmas = new ArrayList<Turma>();
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     private ArrayList<Professor> professores = new ArrayList<Professor>();
     private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
@@ -24,12 +24,16 @@ public class Curso {
     public void adicionarTurma(Turma turma){
         if (this.turmas.isEmpty()){
             this.turmas.add(0, turma);
-        } else{
+        } else if (!this.turmas.isEmpty()){
             this.turmas.add(this.turmas.size(), turma);
         }
     }
 
-    public void exibirTurmas(){
+    public ArrayList<Turma> exibirTurmas(){
+        return this.turmas;
+    }
+
+    public void listarTurmas(){
         if (this.turmas.isEmpty()){
             System.out.println("Nenhuma turma encontrada!");
         } else{
@@ -89,7 +93,11 @@ public class Curso {
         }
     }
 
-    public void exibirDisciplinas(){
+    public ArrayList<Disciplina> exibirDisciplinas(){
+        return this.disciplinas;
+    }
+
+    public void listarDisciplinas(){
         if (this.disciplinas.isEmpty()){
             System.out.println("Nenhuma disciplina encontrada!");
         } else{
