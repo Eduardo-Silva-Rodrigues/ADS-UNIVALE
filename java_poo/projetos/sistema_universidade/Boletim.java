@@ -68,10 +68,12 @@ public class Boletim {
     }
 
     public void adicionarNotasAtividade(){
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Atribuindo notas de ATIVIDADE:");
+        System.out.println("___________________________________");
         System.out.println("                              ");
+        System.out.println("NOTAS ATIVIDADE:");
         for (int i = 0; i < this.disciplinas.size(); i++){
             System.out.print(this.disciplinas.get(i).exibirNome() + ": ");
             Double nota = sc.nextDouble();
@@ -83,17 +85,15 @@ public class Boletim {
                 this.notasAtividade.add(this.notasAtividade.size(), notaAtiv);
             }
         }
-
-        sc.close();
     }
 
     public void exibirNotasAtividade(){
         if (this.notasAtividade.isEmpty()){
             System.out.println("Sem notas de atividade!");
         } else {
-            System.out.println("                   ");
-            System.out.println("Notas de ATIVIDADE:");
-            System.out.println("                   ");
+            System.out.println("___________________________________");
+            System.out.println("                                   ");
+            System.out.println("NOTAS ATIVIDADE:");
             for (int i = 0; i < this.notasAtividade.size(); i++){
                 System.out.println(this.notasAtividade.get(i).exibirNomeDisciplina() + " : " + this.notasAtividade.get(i).exibirNota());
             }
@@ -101,10 +101,12 @@ public class Boletim {
     }
 
     public void adicionarNotasTrabalho(){
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Atribuindo notas de TRABALHO:");
+        System.out.println("___________________________________");
         System.out.println("                              ");
+        System.out.println("NOTAS TRABALHO:");
         for (int i = 0; i < this.disciplinas.size(); i++){
             System.out.print(this.disciplinas.get(i).exibirNome() + ": ");
             Double nota = sc.nextDouble();
@@ -116,17 +118,15 @@ public class Boletim {
                 this.notasTrabalho.add(this.notasTrabalho.size(), notaTrab);
             }
         }
-
-        sc.close();
     }
 
     public void exibirNotasTrabalho(){
         if (this.notasTrabalho.isEmpty()){
             System.out.println("Sem notas de trabalho!");
         } else {
+            System.out.println("___________________________________");
             System.out.println("                   ");
-            System.out.println("Notas de TRABALHO:");
-            System.out.println("                   ");
+            System.out.println("NOTAS TRABALHO:");
             for (int i = 0; i < this.notasTrabalho.size(); i++){
                 System.out.println(this.notasTrabalho.get(i).exibirNomeDisciplina() + " : " + this.notasTrabalho.get(i).exibirNota());
             }
@@ -134,10 +134,11 @@ public class Boletim {
     }
 
     public void adicionarNotasProva(){
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Atribuindo notas de PROVA:");
+        System.out.println("___________________________________");
         System.out.println("                              ");
+        System.out.println("NOTAS PROVA:");
         for (int i = 0; i < this.disciplinas.size(); i++){
             System.out.print(this.disciplinas.get(i).exibirNome() + ": ");
             Double nota = sc.nextDouble();
@@ -150,19 +151,52 @@ public class Boletim {
             }
         }
 
-        sc.close();
     }
 
     public void exibirNotasProva(){
         if (this.notasProva.isEmpty()){
             System.out.println("Sem notas de prova!");
         } else {
+            System.out.println("___________________________________");
             System.out.println("                   ");
-            System.out.println("Notas de PROVA:");
-            System.out.println("                   ");
+            System.out.println("NOTAS PROVA:");
             for (int i = 0; i < this.notasProva.size(); i++){
                 System.out.println(this.notasProva.get(i).exibirNomeDisciplina() + " : " + this.notasProva.get(i).exibirNota());
             }
         }
+    }
+
+    public Double exibirMedia(){
+        ArrayList<String> nomesDisciplinas = new ArrayList<String>();
+        Double notaAtiv = 0.0;
+        Double notaTrab = 0.0;
+        Double notaProva = 0.0;
+        System.out.println("___________________________________");
+        System.out.println("                                   ");
+        System.out.println("MÉDIA DE " + this.nome.toUpperCase());
+        for (int i = 0; i < this.notasAtividade.size(); i++){
+            nomesDisciplinas.add(i, this.notasAtividade.get(i).exibirNomeDisciplina());
+        }
+        for (int i = 0; i < nomesDisciplinas.size(); i++){
+            for (int j = 0; j < this.notasAtividade.size(); j++){
+                if (nomesDisciplinas.get(i) == this.notasAtividade.get(j).exibirNomeDisciplina()){
+                    notaAtiv = this.notasAtividade.get(j).exibirNota();
+                }
+            }
+            for (int j = 0; j < this.notasTrabalho.size(); j++){
+                if (nomesDisciplinas.get(i) == this.notasTrabalho.get(j).exibirNomeDisciplina()){
+                    notaTrab = this.notasTrabalho.get(j).exibirNota();
+                }
+            }
+            for (int j = 0; j < this.notasProva.size(); j++){
+                if (nomesDisciplinas.get(i) == this.notasProva.get(j).exibirNomeDisciplina()){
+                    notaProva = this.notasProva.get(j).exibirNota();
+                }
+            }
+        }
+
+        Double media = (notaAtiv + notaTrab + notaProva) / 3;
+
+        return media;
     }
 }

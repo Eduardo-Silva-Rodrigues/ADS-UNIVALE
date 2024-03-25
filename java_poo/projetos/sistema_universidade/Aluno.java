@@ -28,8 +28,8 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
-    public String exibirCurso(){
-        return this.curso.exibirNome();
+    public Curso exibirCurso(){
+        return this.curso;
     }
 
     public void adicionarTurma(Turma turma){
@@ -52,8 +52,6 @@ public class Aluno extends Pessoa {
         if (this.disciplinas.isEmpty()){
             System.out.println("Nenhuma disciplina encontrada!");
         } else{
-            System.out.println("Disciplinas do aluno " + exibirNome() + ":");
-            System.out.println("                              ");
             for (int i = 0; i < this.disciplinas.size(); i++){
                 System.out.println(this.disciplinas.get(i).exibirNome());
             }

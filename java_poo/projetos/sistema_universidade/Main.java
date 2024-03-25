@@ -164,5 +164,6 @@ public class Main {
         universidade.matricularAluno(aluno4);
 
         universidade.interfaceSecretaria();
+        // professor1.interfaceProfessor();
     }
 }

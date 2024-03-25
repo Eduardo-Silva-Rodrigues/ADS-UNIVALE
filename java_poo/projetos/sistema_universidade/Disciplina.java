@@ -44,16 +44,17 @@ public class Disciplina {
         }
     }
 
-    public ArrayList<Aluno> exibirAlunos(){
+    public void listarAlunos(){
         if (this.alunos.isEmpty()){
             System.out.println("Nenhum aluno encontrado!");
         } else{
-            System.out.println("Alunos da disciplina " + this.nome + ":");
             for (int i = 0; i < this.alunos.size(); i++){
                 System.out.println(this.alunos.get(i).exibirNome());
             }
         }
+    }
 
+    public ArrayList<Aluno> exibirAlunos(){
         return this.alunos;
     }
 

@@ -37,8 +37,7 @@ public class Curso {
         if (this.turmas.isEmpty()){
             System.out.println("Nenhuma turma encontrada!");
         } else{
-            System.out.println("Turmas do curso de " + this.nome + ":");
-            System.out.println("                         ");
+            System.out.println("TURMAS:");
             for (int i = 0; i < this.turmas.size(); i++){
                 System.out.println(this.turmas.get(i).exibirNome());
             }
@@ -53,16 +52,19 @@ public class Curso {
         }
     }
 
-    public void exibirAlunos(){
+    public void listarAlunos(){
         if (this.alunos.isEmpty()){
             System.out.println("Nenhum aluno encontrado!");
         } else{
-            System.out.println("Alunos do curso de " + this.nome + ":");
-            System.out.println("                         ");
+            System.out.println("ALUNOS:");
             for (int i = 0; i < this.alunos.size(); i++){
                 System.out.println(this.alunos.get(i).exibirNome());
             }
         }
+    }
+
+    public ArrayList<Aluno> exibirAlunos(){
+        return this.alunos;
     }
 
     public void adicionarProfessor(Professor professor){
@@ -73,16 +75,19 @@ public class Curso {
         }
     }
 
-    public void exibirProfessores(){
+    public void listarProfessores(){
         if (this.professores.isEmpty()){
             System.out.println("Nenhum professor encontrado!");
         } else{
-            System.out.println("Professores do curso de " + this.nome + ":");
-            System.out.println("                         ");
+            System.out.println("PROFESSORES:");
             for (int i = 0; i < this.professores.size(); i++){
                 System.out.println(this.professores.get(i).exibirNome());
             }
         }
+    }
+
+    public ArrayList<Professor> exibirProfessores(){
+        return this.professores;
     }
 
     public void adicionarDisciplina(Disciplina disciplina){
@@ -101,6 +106,7 @@ public class Curso {
         if (this.disciplinas.isEmpty()){
             System.out.println("Nenhuma disciplina encontrada!");
         } else{
+            System.out.println("DISCIPLINAS:");
             for (int i = 0; i < this.disciplinas.size(); i++){
                 System.out.println(this.disciplinas.get(i).exibirNome());
             }
