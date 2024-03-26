@@ -2,16 +2,19 @@ package java_poo.aulas.leetcode.atividade01;
 
 public class Solution {
     public int[] sumArray(int[] num, int alvo){
+        int[] resultado = new int[2];
         for (int i = 0; i < num.length; i++){
-            if (num[0] + num[i] == alvo && num[0] != num[i]){
-                return new int[]{num[0], num[i]};
-            } else if (num[1] + num[i] == alvo && num[1] != num[i]){
-                return new int[]{num[1], num[i]};
-            } else if (num[2] + num[i] == alvo && num[2] != num[i]){
-                return new int[]{num[2], num[i]};
+            int auxiliar = alvo - num[i];
+            for (int j = 1; j < num.length; j++){
+                if (num[j] == auxiliar){
+                    resultado[0] = i;
+                    resultado[1] = j;
+                }
             }
         }
 
-        return new int[]{0};
+        return resultado;
     }
 }
+
+

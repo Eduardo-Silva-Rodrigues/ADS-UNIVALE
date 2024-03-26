@@ -7,6 +7,8 @@ public class Main {
         nums[0] = 3;
         nums[1] = 2;
         nums[2] = 4;
-        x.sumArray(nums, 6);
+        int[] resultado = x.sumArray(nums, 6);
+
+        System.out.println(resultado[0] + ", " + resultado[1]);
     }
 }
