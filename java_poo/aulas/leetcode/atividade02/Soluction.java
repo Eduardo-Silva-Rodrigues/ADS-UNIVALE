@@ -1,6 +1,9 @@
 package java_poo.aulas.leetcode.atividade02;
 
 public class Soluction {
+
+    // Selo de originalidade (Sem uso do chatGPT);
+
     public int RomanToInteger(String roman){
         int integer = 0;
 
