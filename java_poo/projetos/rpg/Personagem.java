@@ -6,10 +6,25 @@ abstract class Personagem {
     private int dano = 15;
     private int estamina = 200;
     
-    //Método para atacar outro personagem
-    public void atacar(Monstro monstro){
-        int vidaInimigo = monstro.getVida();
-        int vidaPerdida = (vidaInimigo - this.dano);
-        monstro.setVida(vidaPerdida);
+    //Métodos set
+    public void setVida(int vida){
+        this.vida = vida;
     }
+    public void setDano(int dano){
+        this.dano = dano;
+    }
+    public void setEstamina(int estamina){
+        this.estamina = estamina;
+    }
+    //Métodos get
+    public int getVida(){
+        return this.vida;
+    }
+    public int getDano(){
+        return this.dano;
+    }
+    public int getEstamina(){
+        return this.estamina;
+    }
+    
 }

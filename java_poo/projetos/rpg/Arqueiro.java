@@ -1,5 +1,5 @@
 package java_poo.projetos.rpg;
 
-public class Arqueiro {
+public class Arqueiro extends Personagem {
     
 }
