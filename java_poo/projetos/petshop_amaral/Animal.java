@@ -1,12 +1,14 @@
 package java_poo.projetos.petshop_amaral;
 
 public class Animal {
+    //Propriedades de Animal:
     private int codigoAnimal;
     private String nome;
     private int idade;    
     private Boolean presenca;
     private String observacoes;
-
+    
+    //Método construtor de Animal:
     public Animal(int codigoAnimal, String nome, int idade, Boolean presenca){
         this.codigoAnimal = codigoAnimal;
         this.nome = nome;
@@ -14,6 +16,7 @@ public class Animal {
         this.presenca = presenca;
     }
 
+    //Getters and setters:
     public int getCodigoAnimal() {
         return codigoAnimal;
     }

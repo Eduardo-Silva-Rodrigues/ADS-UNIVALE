@@ -1,21 +1,26 @@
 package java_poo.projetos.petshop_amaral;
 
-import java.util.Map;
-import java.util.HashMap;
+//Imports:
+import java.util.Map; //Map é uma espécie de tabela de pares de chave e valores
+import java.util.HashMap; // Hashmap é aquele quem cria os pares de chave e valores
+//Ambos os imports vão ser importantes para a identificação dos pets, pois muitos pets podem ter nomes iguais, então precisamos de um código único para cada um (Chave: código, Valor: pet)
 
 public class Dono {
+    //Propriedades de Dono:
     private int codigoDono;
     private String nome;
     private String endereco;
     private Map<Integer, String> pets = new HashMap<Integer, String>();
-    private String observacoesDono;
+    private String observacoesDono = "";
 
+    //Método construtor de Dono:
     public Dono(int codigoDono, String nome, String endereco){
         this.codigoDono = codigoDono;
         this.nome = nome;
         this.endereco = endereco;
     }
 
+    //Getters and setters:
     public int getCodigoDono() {
         return codigoDono;
     }
