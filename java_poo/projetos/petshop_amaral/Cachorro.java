@@ -3,8 +3,9 @@ package java_poo.projetos.petshop_amaral;
 public class Cachorro extends Animal {
     private String raca;
     private String tipo = "Cachorro";
+    private String observacoesCachorro;
 
-    public Cachorro(int codigoAnimal, String nome, int idade, Boolean presenca, String raca){
+    public Cachorro(int codigoAnimal, String nome, int idade, Boolean presenca,String raca){
         super(codigoAnimal, raca, idade, presenca);
         this.raca = raca;
     }
@@ -25,5 +26,13 @@ public class Cachorro extends Animal {
         this.tipo = tipo;
     }
 
-    
+    @Override
+    public void setObservacoes(String observacoes){
+        this.observacoesCachorro = observacoes;
+    }
+
+    @Override
+    public String getObservacoes(){
+        return observacoesCachorro;
+    }
 }

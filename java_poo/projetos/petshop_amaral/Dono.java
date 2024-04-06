@@ -1,12 +1,13 @@
 package java_poo.projetos.petshop_amaral;
 
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Dono {
     private int codigoDono;
     private String nome;
     private String endereco;
-    private ArrayList<String> pets = new ArrayList<String>();
+    private Map<Integer, String> pets = new HashMap<Integer, String>();
     private String observacoesDono;
 
     public Dono(int codigoDono, String nome, String endereco){
@@ -39,21 +40,19 @@ public class Dono {
         this.endereco = endereco;
     }
 
-    public ArrayList<String> getPets() {
+    public Map<Integer, String> getPets() {
         return pets;
     }
 
-    public void setPet(String nomePet) {
-        this.pets.add(nomePet);
+    public void setPet(Integer codigoPet, String nomePet) {
+        this.pets.put(codigoPet, nomePet);
     }
 
     public String getObservacoesDono() {
         return observacoesDono;
     }
 
-    public void setObservacoesDono(String observacoesDono) {
-        this.observacoesDono = observacoesDono;
+    public void setObservacoes(String observacoes) {
+        this.observacoesDono = observacoes;
     }
-
-    
 }

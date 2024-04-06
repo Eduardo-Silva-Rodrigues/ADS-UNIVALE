@@ -5,6 +5,7 @@ public class Animal {
     private String nome;
     private int idade;    
     private Boolean presenca;
+    private String observacoes;
 
     public Animal(int codigoAnimal, String nome, int idade, Boolean presenca){
         this.codigoAnimal = codigoAnimal;
@@ -45,5 +46,11 @@ public class Animal {
         this.presenca = presenca;
     }
 
-    
+    public String getObservacoes(){
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes){
+        this.observacoes = observacoes;
+    }
 }

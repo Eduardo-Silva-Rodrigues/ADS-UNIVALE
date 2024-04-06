@@ -67,6 +67,7 @@ public class Petshop {
     public void criarCadastrarDonoEPet(){
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("               ");
         System.out.println("CADASTRAR DONO:");
         System.out.println("               ");
         System.out.print("Código: ");
@@ -107,22 +108,22 @@ public class Petshop {
 
         if (numeroTipoPet == 1){
             Cachorro cachorro = new Cachorro(codigoPet, nomePet, idadePet, null, racaPet);
-            dono.setPet(nomePet);
+            dono.setPet(codigoPet, nomePet);
             caesCadastrados.add(cachorro);
         } else if (numeroTipoPet == 2){
             Gato gato = new Gato(codigoPet, nomePet, idadePet, null, racaPet);
-            dono.setPet(nomePet);
+            dono.setPet(codigoPet, nomePet);
             gatosCadastrados.add(gato);
         } else if (numeroTipoPet == 3){
             Furao gato = new Furao(codigoPet, nomePet, idadePet, null, racaPet);
-            dono.setPet(nomePet);
+            dono.setPet(codigoPet, nomePet);
             furoesCadastrados.add(gato);
         } else if (numeroTipoPet == 4){
             PorquinhoDaIndia porquinhoDaIndia = new PorquinhoDaIndia(codigoPet, nomePet, idadePet, null, racaPet);
-            dono.setPet(nomePet);
+            dono.setPet(codigoPet, nomePet);
             porquinhosDaIndiaCadastrados.add(porquinhoDaIndia);
         } else {
-            System.out.println("Nenhum animal cadastrado");
+            System.out.println("Tipo de animal não cadastrado");
         }
         sc.close();
     }
@@ -130,17 +131,110 @@ public class Petshop {
     public void visualizarDonosCadastrados(){
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("          ");
+        System.out.println("DONOS CADASTRADOS:");
+        System.out.println("          ");
+
         for (int i = 0; i < donosCadastrados.size(); i++){
             System.out.println(donosCadastrados.get(i).getCodigoDono() + " - " + donosCadastrados.get(i));
         }
 
-        System.out.print("Exibir informações do dono: ");
+        System.out.print("                            ");
+        System.out.print("Exibir informações do dono (Código): ");
         int codigoDono = sc.nextInt();
         exibirInformacoesDono(codigoDono);
         sc.close();
     }
 
     public void exibirInformacoesDono(int codigoDono){
+        Scanner sc = new Scanner(System.in);
+        for (Dono dono : donosCadastrados){
+            if (dono.getCodigoDono() == codigoDono){
+                System.out.println("            ");
+                System.out.println("DETALHES DE CADASTRO:");
+                System.out.println("            ");
+                System.out.println("Código: " + dono.getCodigoDono());
+                System.out.println("Nome: " + dono.getNome());
+                System.out.println("Endereço: " + dono.getEndereco());
+                
+                System.out.println("            ");
+                System.out.println("PETS:");
+                System.out.println("            ");
+                System.out.println(dono.getPets().keySet().iterator() + " - " + dono.getPets().values().iterator());
+                
+                System.out.println("            ");
+                System.out.print("Exibir informações do pet (Código): ");
+                int codigoPet = sc.nextInt();
+                exibirInformacoesPet(codigoPet);
+            } else {
+                System.out.println("Este dono não existe na lista de cadastro!");
+            }
+        }
 
+        sc.close();
+    }
+    
+    public void exibirInformacoesPet(int codigoPet){
+        String nome = "";
+        int idade = 0;
+        Boolean presenca = null;
+        String observacoes = "";
+        String tipoAnimal = "";
+        String raca = "";
+
+        for (Cachorro cachorro : caesCadastrados){
+            if (codigoPet == cachorro.getCodigoAnimal()){
+                nome = cachorro.getNome();
+                idade = cachorro.getIdade();
+                presenca = cachorro.getPresenca();
+                observacoes = cachorro.getObservacoes();
+                tipoAnimal = cachorro.getTipo();
+                raca = cachorro.getRaca();
+            }
+        }
+        
+        for (Gato gato : gatosCadastrados){
+            if (codigoPet == gato.getCodigoAnimal()){
+                nome = gato.getNome();
+                idade = gato.getIdade();
+                presenca = gato.getPresenca();
+                observacoes = gato.getObservacoes();
+                tipoAnimal = gato.getTipo();
+                raca = gato.getRaca();
+            }
+        }
+        
+        for (Furao furao : furoesCadastrados){
+            if (codigoPet == furao.getCodigoAnimal()){
+                nome = furao.getNome();
+                idade = furao.getIdade();
+                presenca = furao.getPresenca();
+                observacoes = furao.getObservacoes();
+                tipoAnimal = furao.getTipo();
+                raca = furao.getRaca();
+            }
+        }
+        
+        for (PorquinhoDaIndia porquinhoDaIndia : porquinhosDaIndiaCadastrados){
+            if (codigoPet == porquinhoDaIndia.getCodigoAnimal()){
+                nome = porquinhoDaIndia.getNome();
+                idade = porquinhoDaIndia.getIdade();
+                presenca = porquinhoDaIndia.getPresenca();
+                observacoes = porquinhoDaIndia.getObservacoes();
+                tipoAnimal = porquinhoDaIndia.getTipo();
+                raca = porquinhoDaIndia.getRaca();
+            }
+        }
+        
+        System.out.println("           ");
+        System.out.println("DETALHES DO PET");
+        System.out.println("           ");
+        System.out.println("Código: " + codigoPet);
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Presença: " + presenca);
+        System.out.println("Observações: " + observacoes);
+        System.out.println("Tipo de animal: " + tipoAnimal);
+        System.out.println("Raça: " + raca);
     }
 }

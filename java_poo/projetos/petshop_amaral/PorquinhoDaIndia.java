@@ -3,6 +3,7 @@ package java_poo.projetos.petshop_amaral;
 public class PorquinhoDaIndia extends Animal {
     private String raca;
     private String tipo = "Porquinho da India";
+    private String observacoesPorquinhoDaIndia;
 
     public PorquinhoDaIndia(int codigoAnimal, String nome, int idade, Boolean presenca, String raca){
         super(codigoAnimal, raca, idade, presenca);
@@ -25,5 +26,14 @@ public class PorquinhoDaIndia extends Animal {
         this.tipo = tipo;
     }
 
+    @Override
+    public void setObservacoes(String observacoes){
+        this.observacoesPorquinhoDaIndia = observacoes;
+    }
+
+    @Override
+    public String getObservacoes(){
+        return observacoesPorquinhoDaIndia;
+    }
     
 }
