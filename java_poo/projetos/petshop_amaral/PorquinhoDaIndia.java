@@ -9,7 +9,7 @@ public class PorquinhoDaIndia extends Animal {
 
     //Método construtor de PorquinhoDaIndia:
     public PorquinhoDaIndia(int codigoAnimal, String nome, int idade, Boolean presenca, String raca){
-        super(codigoAnimal, raca, idade, presenca);
+        super(codigoAnimal, nome, idade, presenca);
         this.raca = raca;
     }
 

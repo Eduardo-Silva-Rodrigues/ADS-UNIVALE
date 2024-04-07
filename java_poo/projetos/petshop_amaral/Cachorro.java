@@ -9,7 +9,7 @@ public class Cachorro extends Animal {
 
     //Método construtor de Cachorro:
     public Cachorro(int codigoAnimal, String nome, int idade, Boolean presenca,String raca){
-        super(codigoAnimal, raca, idade, presenca);
+        super(codigoAnimal, nome, idade, presenca);
         this.raca = raca;
     }
 

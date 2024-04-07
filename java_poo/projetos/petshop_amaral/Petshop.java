@@ -9,10 +9,10 @@ import java.util.Scanner; //Scanner para a entrada de dados
 public class Petshop {
     //Propriedades do sistema de petshop:
     private ArrayList<Dono> donosCadastrados = new ArrayList<Dono>();
-    private ArrayList<Cachorro> caesCadastrados = new ArrayList<Cachorro>();;
-    private ArrayList<Gato> gatosCadastrados = new ArrayList<Gato>();;
-    private ArrayList<Furao> furoesCadastrados = new ArrayList<Furao>();;
-    private ArrayList<PorquinhoDaIndia> porquinhosDaIndiaCadastrados = new ArrayList<PorquinhoDaIndia>();;
+    private ArrayList<Cachorro> caesCadastrados = new ArrayList<Cachorro>();
+    private ArrayList<Gato> gatosCadastrados = new ArrayList<Gato>();
+    private ArrayList<Furao> furoesCadastrados = new ArrayList<Furao>();
+    private ArrayList<PorquinhoDaIndia> porquinhosDaIndiaCadastrados = new ArrayList<PorquinhoDaIndia>();
     private Map<Integer, String> petsPresentes = new HashMap<Integer, String>();
 
     //Método construtor:
