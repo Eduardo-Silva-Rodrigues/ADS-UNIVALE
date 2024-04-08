@@ -55,7 +55,7 @@ public class InterfacePetshop {
         String cpfDono = sc.next();
         sc.nextLine();
 
-        validarCpfDoDono(cpfDono);
+        validarCpfDoDono(cpfDono); //Pensando em solução para encaixar o método "validarCpfDoDono" neste méodo de listagem
     }
 
     public void interfaceParaVerDatalhesDeCadastro(){
