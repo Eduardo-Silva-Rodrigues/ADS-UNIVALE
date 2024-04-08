@@ -361,11 +361,6 @@ public class Petshop {
                     cachorro.setPresenca(false);
                     cachorro.setObservacoes(obs);
                     exibirInformacoesPetAtualizarPresencaEObservacoes(codigoPet);
-                } else {
-                    System.out.println("                 ");
-                    System.out.println("[ ALGO DEU ERRADO ]");
-                    System.out.println("                 ");
-                    System.out.println("Verifique se o código e a opção de presença estão corretos!");
                 }
             }
         } else if (tipoAnimal == "Gato"){
