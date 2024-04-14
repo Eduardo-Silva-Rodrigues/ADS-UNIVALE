@@ -30,12 +30,32 @@ public class InterfacePetshop {
             System.out.println("\n[ CPF INVÁLIDO! ]\n");
         }
 
-        interfaceGeral();
+        interfaceDeRetorno();
         sc.close();
     }
 
     public void interfaceCadastroPet(){
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("\n[ CADASTRANDO PET ]\n");
+        System.out.println("NOME: ");
+        String nomeDono = sc.next();
+        sc.nextLine();
+        System.out.println("CÓDIGO: ");
+        String cpfDono = sc.next();
+        sc.nextLine();
+        System.out.println("ENDEREÇO: ");
+        String enderecoDono = sc.next();
+        sc.nextLine();
+        
+        if (sistemaDeCadastro.cadastrarNovoDono(nomeDono, cpfDono, enderecoDono)){
+            System.out.println("\n[ NOVO DONO CADASTRADO! ]\n");
+        } else {
+            System.out.println("\n[ CPF INVÁLIDO! ]\n");
+        }
+
+        interfaceDeRetorno();
+        sc.close();
     }
 
     public void interfaceParaListarPetsPresentes(){
@@ -47,19 +67,64 @@ public class InterfacePetshop {
     public void interfaceParaListarDonos(){
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n[ LISTANDO DONOS ]\n");
+        System.out.println("\n[ LISTA DE DONOS CADASTRADOS ]\n");
         for (Dono dono : sistemaDeListagem.obterListaDeDonos()){
             System.out.println(dono.obterCpfDoDono() + " - " + dono.obterNomeCompletoDoDono());
+            if (dono.validarCpfDoDono(dono.obterCpfDoDono())){
+                continue;
+            } else {
+                System.out.println("\n[ CPF INVÁLIDO! ]\n");
+            }
         }
-        System.out.print("\nCPF -> ");
+        System.out.print("\n (Digite \"0\" para voltar)\nVISUALIZAR CADASTRO DE DONO [CPF] -> ");
         String cpfDono = sc.next();
         sc.nextLine();
 
-        validarCpfDoDono(cpfDono); //Pensando em solução para encaixar o método "validarCpfDoDono" neste méodo de listagem
+        if (cpfDono == "0"){
+            interfaceGeral();
+        }
+
+        interfaceParaVerDatalhesDeCadastroDeDono(cpfDono);
     }
 
-    public void interfaceParaVerDatalhesDeCadastro(){
+    public void interfaceParaVerDatalhesDeCadastroDeDono(String identificador){
+        Dono dono = identificadorDeCpf(identificador);
 
+        if (dono == null){
+            System.out.println("\n[ CPF INVÁLIDO ]\n");
+            interfaceDeRetorno();
+        }
+
+        System.out.println("\n[ DETALHES DE CADASTRO DE DONO ]\n");
+        System.out.println("NOME: ");
+        System.out.println("CPF: ");
+        System.out.println("ENDEREÇO: ");
+        System.out.println("\n[ PETS ]\n");
+
+        for (Pet pet : dono.obterPetsDoDono()){
+            System.out.println(pet.obterCodigoDoPet() + " - " + pet.obterNomeDoPet());
+        }
+
+        interfaceDeRetorno();
+    }
+
+    public Dono identificadorDeCpf(String cpf){
+        for (Dono dono : sistemaDeListagem.obterListaDeDonos()){
+            if (dono.obterCpfDoDono() == cpf){
+                return dono;
+            }
+        }
+
+        return null;
+    }
+
+    public void interfaceDeRetorno(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("\n-- Pressione ENTER para retornar na tela inicial!");
+        sc.nextLine();
+        interfaceGeral();
+        sc.close();
     }
 
     public void interfaceGeral(){
@@ -89,7 +154,7 @@ public class InterfacePetshop {
                 break;
         
             case 3:
-                
+                interfaceParaListarDonos();
                 break;
         
             case 4:
