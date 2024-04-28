@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* NAVBAR */
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.1em;
+    background-color: #292929;
+    box-shadow: 0em 0.1em 3em black;
+    min-width: none;
+    max-width: auto;
+}
+
+.logo, ul, .nav-item, a {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+.nav-item {
+    margin: 2em;
+    letter-spacing: 3px;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 28px;
+}
+
+.linha-deco {
+    background-color: #fff;
+    width: 15em;
+    height: 0.01em;
+}
+
+/* BANNER */
+
+.banner-inicial img{
+    width: 100%;
+    min-width: none;
+    max-width: auto;
+}
+
+/* PRODUTOS */
+
+.container .primeiro-titulo {
+    margin: 2em 0 1em 1em;
+    letter-spacing: 3px;
+}
+
+.titulo h3 {
+    margin: 2em 0 0 2em;
+    letter-spacing: 2px;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 37vh;
+    max-height: 200vh;
+}
+
+.item img {
+    height: 30vh;
+    margin: 1vh 0 1vh 0;
+    border-radius: 10px;
+    border: solid 1px #292929;
+    width: 22vh;
+}
+
+/* ITEM */
+
+.item  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22vh;
+    min-height: 35vh;
+    max-height: 100vh;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.item h4 {
+    font-size: 14px;    
+}
+
+.item .price {
+    margin-top: auto;
+}
+
+/* CONTATO */
+
+.contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #292929;
+    margin: 4em auto;
+    width: 7em;
+    padding: 1em;
+    border-radius: 10px;    
+}
+
+.contact-button h5 {
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.contact-button:hover{
+    opacity: 0.9;;
+}
