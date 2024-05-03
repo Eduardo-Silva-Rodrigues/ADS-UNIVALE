@@ -1,4 +1,4 @@
-package java_poo.aulas.agregacao;
+package java_poo.bimestre_1.aulas.agregacao;
 
 public class Endereco {
     private String logradouro;

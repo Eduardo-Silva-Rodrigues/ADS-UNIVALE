@@ -1,4 +1,4 @@
-package java_poo.projetos.esquenta;
+package java_poo.bimestre_1.projetos.esquenta;
 
 public class Pessoa {
     private static long aux;

@@ -1,4 +1,4 @@
-package java_poo.projetos.universidade;
+package java_poo.bimestre_1.projetos.universidade;
 
 import java.util.ArrayList;
 import java.util.Scanner;

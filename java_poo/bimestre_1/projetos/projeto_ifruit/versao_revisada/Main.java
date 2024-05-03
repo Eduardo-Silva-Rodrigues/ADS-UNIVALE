@@ -1,4 +1,4 @@
-package java_poo.projetos.projeto_ifruit.versao_revisada;
+package java_poo.bimestre_1.projetos.projeto_ifruit.versao_revisada;
 public class Main {
     public static void main(String[] args) {
         Product[] products = new Product[3];

@@ -1,4 +1,4 @@
-package java_poo.outros.tiposPrimitivos;
+package java_poo.bimestre_1.outros.tiposprimitivos;
 
 public class Tipos_Primitivos {
     public static void main(String[] args) {

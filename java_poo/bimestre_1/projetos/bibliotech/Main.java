@@ -1,4 +1,4 @@
-package java_poo.projetos.bibliotech;
+package java_poo.bimestre_1.projetos.bibliotech;
 
 public class Main {
     public static void main(String[] args) {

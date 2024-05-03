@@ -1,4 +1,4 @@
-package java_poo.projetos.projeto_ifruit.versao_revisada;
+package java_poo.bimestre_1.projetos.projeto_ifruit.versao_revisada;
 
 public class User {
     private String name;

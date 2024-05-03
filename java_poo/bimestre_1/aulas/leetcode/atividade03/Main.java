@@ -1,4 +1,4 @@
-package java_poo.aulas.leetcode.atividade03;
+package java_poo.bimestre_1.aulas.leetcode.atividade03;
 
 public class Main {
     public static void main(String[] args){

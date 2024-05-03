@@ -1,4 +1,4 @@
-package java_poo.projetos.universidade;
+package java_poo.bimestre_1.projetos.universidade;
 
 public class Nota {
     private Aluno aluno;

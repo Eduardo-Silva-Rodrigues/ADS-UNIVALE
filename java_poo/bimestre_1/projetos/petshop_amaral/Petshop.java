@@ -1,4 +1,4 @@
-package java_poo.projetos.petshop_amaral;
+package java_poo.bimestre_1.projetos.petshop_amaral;
 
 //Imports:
 import java.util.ArrayList; //Listas para guardar os donos e pets

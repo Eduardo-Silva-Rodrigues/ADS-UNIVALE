@@ -1,4 +1,4 @@
-package java_poo.aulas.heranca_polimorfismo.desafio_01;
+package java_poo.bimestre_1.aulas.heranca_polimorfismo.desafio_01;
 
 public class Cliente {
     // Propriedades:

@@ -1,4 +1,4 @@
-package java_poo.aulas.leetcode.atividade01;
+package java_poo.bimestre_1.aulas.leetcode.atividade01;
 
 public class Solution {
     public int[] sumArray(int[] num, int alvo){

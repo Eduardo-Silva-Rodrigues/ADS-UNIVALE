@@ -1,4 +1,4 @@
-package java_poo.projetos.rpg;
+package java_poo.bimestre_1.projetos.rpg;
 
 public class Guerreiro extends Personagem {
     private int armadura = 5;

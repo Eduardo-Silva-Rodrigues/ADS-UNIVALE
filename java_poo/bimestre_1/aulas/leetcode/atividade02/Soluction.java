@@ -1,4 +1,4 @@
-package java_poo.aulas.leetcode.atividade02;
+package java_poo.bimestre_1.aulas.leetcode.atividade02;
 
 public class Soluction {
 

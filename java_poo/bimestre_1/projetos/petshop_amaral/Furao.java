@@ -1,4 +1,4 @@
-package java_poo.projetos.petshop_amaral;
+package java_poo.bimestre_1.projetos.petshop_amaral;
 
 //Classe Furao herda as propriedades e métodos da classe Animal:
 public class Furao extends Animal {

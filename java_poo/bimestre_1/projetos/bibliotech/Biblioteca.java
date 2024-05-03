@@ -1,4 +1,4 @@
-package java_poo.projetos.bibliotech;
+package java_poo.bimestre_1.projetos.bibliotech;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package java_poo.projetos.petshop_amaral;
+package java_poo.bimestre_1.projetos.petshop_amaral;
 
 public class Animal {
     //Propriedades de Animal:

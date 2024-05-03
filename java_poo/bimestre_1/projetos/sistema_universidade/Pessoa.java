@@ -1,4 +1,4 @@
-package java_poo.projetos.sistema_universidade;
+package java_poo.bimestre_1.projetos.sistema_universidade;
 
 public class Pessoa {
     private String nome;

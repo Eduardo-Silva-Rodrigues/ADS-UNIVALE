@@ -1,4 +1,4 @@
-package java_poo.projetos.rede_social;
+package java_poo.bimestre_1.projetos.rede_social;
 
 import java.util.ArrayList;
 
