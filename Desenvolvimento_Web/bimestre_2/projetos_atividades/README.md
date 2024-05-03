@@ -7,7 +7,7 @@
 *(SWITCH)*
 - *Lucas Dias*
 *(FOR)*
-- *Matheus Cristiano*
+- *Mateus Cristiano*
 *(WHILE)*
 
 
