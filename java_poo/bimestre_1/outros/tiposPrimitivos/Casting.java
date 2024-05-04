@@ -1,4 +1,4 @@
-package java_poo.bimestre_1.outros.tiposprimitivos;
+package java_poo.bimestre_1.outros.tiposPrimitivos;
 
 public class Casting {
     public static void main(String[] args) {
