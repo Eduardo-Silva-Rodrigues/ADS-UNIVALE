@@ -14,10 +14,10 @@ form.addEventListener("submit", function(event){
     let resultado; 
 
     for (i = 0; i < listaNotas.length; i++){ 
-        aux += listaNotas[i]; s 
+        aux += listaNotas[i];
         resultado = aux / listaNotas.length; 
     }
-    
+
     let newRow = table.insertRow(); 
     let newColumn1 = newRow.insertCell();
     let newColumn2 = newRow.insertCell();
