@@ -1,34 +1,34 @@
-const form = document.querySelector("#formulario_aluno"); // Pega a estrutura do formulário
-const table = document.querySelector("#corpo_tabela"); // Pega a estrutura da tabela
+const form = document.querySelector("#formulario_aluno"); 
+const table = document.querySelector("#corpo_tabela"); 
 
-form.addEventListener("submit", function(event){ // Declara uma função para vigiar o evento "submit"
-    event.preventDefault(); // Impede que a página atualize quando o submit é executado
+form.addEventListener("submit", function(event){ 
+    event.preventDefault(); 
 
-    let nome = document.querySelector("#nome").value; // Pega o valor do campo nome
-    let nota01 = parseFloat(document.querySelector("#nota1").value); // Pega o valor do campo nota1
-    let nota02 = parseFloat(document.querySelector("#nota2").value); // Pega o valor do campo nota1
-    let nota03 = parseFloat(document.querySelector("#nota3").value); // Pega o valor do campo nota1
-    let nota04 = parseFloat(document.querySelector("#nota4").value); // Pega o valor do campo nota1
-    let listaNotas = [nota01, nota02, nota03, nota04]; // Adiciona todas as notas em uma lista
-    let aux = 0; // Variável responsável pela soma das notas
-    let resultado; // Variável do resultado final da média
+    let nome = document.querySelector("#nome").value; 
+    let nota01 = parseFloat(document.querySelector("#nota1").value); 
+    let nota02 = parseFloat(document.querySelector("#nota2").value); 
+    let nota03 = parseFloat(document.querySelector("#nota3").value); 
+    let nota04 = parseFloat(document.querySelector("#nota4").value); 
+    let listaNotas = [nota01, nota02, nota03, nota04]; 
+    let aux = 0; 
+    let resultado; 
 
-    for (i = 0; i < listaNotas.length; i++){ // Laço for para automatizar o cálculo da média
-        aux += listaNotas[i]; // Operação de adição usando a lista de notas 
-        resultado = aux / listaNotas.length; // Cálculo final da média
+    for (i = 0; i < listaNotas.length; i++){ 
+        aux += listaNotas[i]; s 
+        resultado = aux / listaNotas.length; 
     }
-    let newRow = table.insertRow(); // Inserindo uma nova linha na tabela
-    let newColumn1 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
-    let newColumn2 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
-    let newColumn3 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
-    let newColumn4 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
-    let newColumn5 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
-    let newColumn6 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
+    let newRow = table.insertRow(); 
+    let newColumn1 = newRow.insertCell();
+    let newColumn2 = newRow.insertCell();
+    let newColumn3 = newRow.insertCell();
+    let newColumn4 = newRow.insertCell();
+    let newColumn5 = newRow.insertCell();
+    let newColumn6 = newRow.insertCell();
 
-    newColumn1.innerHTML = nome; // Adicionando o valor do nome na coluna 1
-    newColumn2.innerHTML = nota01; // Adicionando o valor da nota1 na coluna 2
-    newColumn3.innerHTML = nota02; // Adicionando o valor da nota2 na coluna 3
-    newColumn4.innerHTML = nota03; // Adicionando o valor da nota3 na coluna 4
-    newColumn5.innerHTML = nota04; // Adicionando o valor da nota4 na coluna 5
-    newColumn6.innerHTML = resultado; // Adicionando o valor da média na coluna 6
+    newColumn1.innerHTML = nome; 
+    newColumn2.innerHTML = nota01; 
+    newColumn3.innerHTML = nota02; 
+    newColumn4.innerHTML = nota03; 
+    newColumn5.innerHTML = nota04; 
+    newColumn6.innerHTML = resultado; 
 });
