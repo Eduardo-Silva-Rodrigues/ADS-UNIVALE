@@ -17,6 +17,7 @@ form.addEventListener("submit", function(event){
         aux += listaNotas[i]; s 
         resultado = aux / listaNotas.length; 
     }
+    
     let newRow = table.insertRow(); 
     let newColumn1 = newRow.insertCell();
     let newColumn2 = newRow.insertCell();
