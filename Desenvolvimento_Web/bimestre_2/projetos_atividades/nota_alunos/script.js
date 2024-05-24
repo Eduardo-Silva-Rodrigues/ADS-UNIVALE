@@ -25,10 +25,10 @@ form.addEventListener("submit", function(event){ // Declara uma função para vi
     let newColumn5 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
     let newColumn6 = newRow.insertCell(); // Inserindo uma nova coluna na linha criada anteriormente
 
-    newColumn1.innerHTML = nome; // Adicionando o valor do nome na columa 1
-    newColumn2.innerHTML = nota01; // Adicionando o valor da nota1 na columa 2
-    newColumn3.innerHTML = nota02; // Adicionando o valor da nota2 na columa 3
-    newColumn4.innerHTML = nota03; // Adicionando o valor da nota3 na columa 4
-    newColumn5.innerHTML = nota04; // Adicionando o valor da nota4 na columa 5
-    newColumn6.innerHTML = resultado; // Adicionando o valor da média na columa 6
+    newColumn1.innerHTML = nome; // Adicionando o valor do nome na coluna 1
+    newColumn2.innerHTML = nota01; // Adicionando o valor da nota1 na coluna 2
+    newColumn3.innerHTML = nota02; // Adicionando o valor da nota2 na coluna 3
+    newColumn4.innerHTML = nota03; // Adicionando o valor da nota3 na coluna 4
+    newColumn5.innerHTML = nota04; // Adicionando o valor da nota4 na coluna 5
+    newColumn6.innerHTML = resultado; // Adicionando o valor da média na coluna 6
 });
