@@ -2,7 +2,7 @@ const form = document.querySelector("#form");
 const containerTables = document.querySelector("#tables-container");
 const warn = document.querySelector(".warn");
 let tables = [];
-// correção
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     let value = document.querySelector("#input").value;
