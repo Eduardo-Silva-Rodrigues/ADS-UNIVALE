@@ -15,7 +15,7 @@ form.addEventListener("reset", function(e) {
     removeLastTable();
     warn.style.display = "none";
 })
-
+// 
 function generatedTable(value){
     let table = document.createElement("table");
     table.classList.add("table");
