@@ -10,6 +10,14 @@ body {
     background-color: #1c1c1c;
 }
 
+.name {
+    font-family: "Roboto";
+    color: white;
+    margin: 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 .text-container {
     display: flex;
     flex-direction: column;
@@ -33,7 +41,7 @@ body {
     width: 40rem;
     height: 10rem;
     position: absolute;
-    top: 190%;
+    top: 130%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #28c96b;
@@ -93,7 +101,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 400%;
+    top: 220%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
