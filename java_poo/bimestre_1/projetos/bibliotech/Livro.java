@@ -1,15 +1,17 @@
 package java_poo.bimestre_1.projetos.bibliotech;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Livro {
-    private String ISBN;
+    private Long ISBN;
     private String titulo;
     private String categoria;
     private String autor;
     private String editora;
     private String anoPublicacao;
 
-    Livro(String ISBN, String titulo, String categoria, String autor, String editora, String anoPublicacao){
-        this.ISBN = ISBN;
+    Livro(String titulo, String categoria, String autor, String editora, String anoPublicacao){
+        this.ISBN = ThreadLocalRandom.current().nextLong(1, 1000);
         this.titulo = titulo;
         this.categoria = categoria;
         this.autor = autor;
@@ -17,9 +19,18 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public void setISBN(String ISBN){
-        this.ISBN = ISBN;
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "ISBN=" + ISBN +
+                ", titulo='" + titulo + '\'' +
+                ", categoria='" + categoria + '\'' +
+                ", autor='" + autor + '\'' +
+                ", editora='" + editora + '\'' +
+                ", anoPublicacao='" + anoPublicacao + '\'' +
+                '}';
     }
+
     public void setTitulo(String titulo){
         this.titulo = titulo;
     }
@@ -36,7 +47,7 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
     
-    public String getISBN(){
+    public Long getISBN(){
         return this.ISBN;
     }
     public String getTitulo(){

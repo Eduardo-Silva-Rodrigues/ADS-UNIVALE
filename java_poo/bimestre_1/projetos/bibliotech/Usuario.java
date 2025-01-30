@@ -1,22 +1,35 @@
 package java_poo.bimestre_1.projetos.bibliotech;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Usuario {
-    private String ID;
+    private Long ID;
     private String nome;
     private String telefone;
     private String email;
     private String endereco;
     // private List<Usuario> dadosUsuario = new ArrayList<Usuario>();
 
-    Usuario(String ID, String nome, String telefone, String email, String endereco){
-        this.ID = ID;
+    Usuario(String nome, String telefone, String email, String endereco){
+        this.ID = ThreadLocalRandom.current().nextLong(1, 1000);
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
     }
 
-    public String getID() {
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "ID=" + ID +
+                ", nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
+    }
+
+    public Long getID() {
         return ID;
     }
     public String getNome() {
@@ -32,9 +45,6 @@ public class Usuario {
         return endereco;
     }
 
-    public void setID(String iD) {
-        ID = iD;
-    }
     public void setNome(String nome) {
         this.nome = nome;
     }
